@@ -51,6 +51,12 @@ least these, and follow up on any thread that looks thin:
 
 - "What did `{USER_NAME}` ship, close, review, or finish between {start_date} and now?
   Include Jira tickets, GitHub PRs, docs published, decisions taken. Cite sources."
+- "What in-progress strategic work is `{USER_NAME}` driving right now — reference
+  architectures, customer or partner engagements, cross-team initiatives,
+  proofs-of-concept, prospect conversations? Include the collaborators involved.
+  Cite sources." (These items rarely 'ship' in a single week but are often the
+  most important part of the check-in — don't skip them just because there's no
+  merge commit.)
 - "What meetings did `{USER_NAME}` attend this week that had substantive outcomes,
   decisions, or action items assigned to them? Cite meeting notes and calendar."
 - "What is `{USER_NAME}` currently planning to work on next? Any explicit
@@ -102,9 +108,12 @@ to fill gaps. Convert `start_date` to a Unix timestamp for Slack's `after:` filt
   week. This is often the richest signal of what they actually worked on.
 - Same tool with `to:me after:{start_date}` — messages sent to the user; helps
   identify blockers and asks-of-them.
-- For any DM that surfaces substantive work (customer conversations, decisions,
+- For any DM or group DM that surfaces substantive work (customer/partner
+  conversations, RA discussions, technical positioning debates, decisions,
   help requests answered), use `mcp__claude_ai_Slack__slack_read_channel` on the
-  DM channel ID for surrounding context.
+  channel ID for surrounding context. **Group DMs with senior technical folks
+  or leadership are especially high-signal — a discussion of an RA or a partner
+  integration in a group DM is real strategic work even if nothing "shipped".**
 
 Weave Slack-derived items in with the Super-derived items — do NOT double-count.
 
