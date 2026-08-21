@@ -130,6 +130,24 @@ Keep the bullet to one line ideally, but if it must wrap keep everything in a
 single bullet — do NOT break into multiple bullets. If the window has no
 external-invitee meetings, OMIT this bullet entirely (don't write "None").
 
+**Then produce a SECOND, separate bullet for internal, non-recurring meetings.**
+Filter the same event list for events where:
+- The `attendees` field exists AND has more than one entry (skip solo blocks).
+- EVERY attendee email ends in `@{COMPANY_DOMAIN}` (no external attendees at all).
+- The event has NO `recurringEventId` field — i.e., it is a one-off, NOT a
+  recurring-instance meeting. Standing 1:1s, weekly team syncs, and daily
+  standups are excluded; ad-hoc / one-time discussions are included.
+
+For each qualifying event, extract the `summary` (title). Produce ONE bullet in
+this exact shape:
+
+    - Internal one-off meetings this cycle: {Meeting 1 title}; {Meeting 2 title}; {Meeting 3 title}
+
+Example: `- Internal one-off meetings this cycle: Inference Launchpad (Instinct Coder) GTM; Nick/Bill Sync`
+
+Single bullet — no multi-bullet expansion. If the window has no internal one-off
+meetings, OMIT the bullet entirely (don't write "None").
+
 ### 3d. Slack MCP (direct, DM and channel activity)
 
 Super's Slack coverage can miss DMs and short exchanges. Use Slack MCP directly
